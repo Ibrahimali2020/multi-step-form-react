@@ -1,13 +1,359 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+  /* Primary */
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+ /* Neutral */
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%) ;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: var(--Light-blue);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+p {
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: start;
+  background-color: var(--White);
+  height: 500px;
+  width: 900px;
+  margin: 80px auto;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+nav {
+  background-image: url('../public/images/bg-sidebar-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 250px;
+  height: 100%;
+  border-radius: 10px;
+  color: var(--Alabaster);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  width: 180px;
+  margin-top: 10px;
+  font-size: 16px;
+  
+}
+
+.step-num {
+  border-radius: 50%; 
+  border: 1px solid var(--White);
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  padding: 5px;
+}
+
+.step-info {
+  margin-left: 10px;
+  line-height: 1px;
+}
+.step-info p {
+text-align: start;
+color: var(--Cool-gray);
+font-size: 14px;
+
+}
+.step-info h3 {
+  text-align: start;
+}
+
+main {
+  margin: 10px auto ;
+  text-align: start;
+  width: 500px;
+}
+
+.main-content {
+  width: 100%;
+  height: 250px;
+}
+
+header h4 {
+  color: var(--Cool-gray);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-control {
+  padding: 10px 0;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+input {
+  border-radius: 5px;
+  padding: 12px 10px;
+  width: 95%;
+  border: var(--Light-gray) 1px solid;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  cursor: pointer; 
+  margin-top: 40px;
+}
+
+.btn-primary {
+  background-color: var(--Marine-blue);
+  border-radius: 5px;
+  color: var(--White);
+  }
+
+.btn-secondary {
+  background-color: var(--White);
+  color: var(--Marine-blue);
+  border: none;
+  align-self: self-start;
+}
+
+.btn-confirm {
+  background-color: var(--Purplish-blue);
+  border-radius: 5px;
+  color: var(--White);
+}
+
+.active {
+  background-color: var(--Pastel-blue);
+  color: var(--Marine-blue);
+}
+
+.card img {
+  width: 40px;
+  height: 40px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  border: 1px solid hsl(229, 24%, 87%);
+  width: 100px;
+  height: 130px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card:hover {
+  border: 1px solid hsl(243, 100%, 62%);
+  background-color: var(--Alabaster);
+  cursor: pointer;
+}
+.activeCard {
+  border: 1px solid hsl(243, 100%, 62%);
+  background-color: var(--Alabaster);
+}
+
+.monthly-yearly {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 20px;
+  background-color: hsl(217, 100%, 97%);
+  margin-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.yearly {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.noPeriodSelected  {
+  color: var(--Cool-gray);
+}
+
+.periodSelected {
+  color: var(--Purplish-blue);
+  font-weight: bold;
+}
+
+
+/* ToggleSwitch.css */
+
+/* Container for the switch */
+.toggle-switch {
+  width: 60px;
+  height: 30px;
+  background-color: hsl(213, 96%, 18%);;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Slider knob */
+.slider {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+/* Active state styles */
+.toggle-switch.active {
+  background-color: hsl(213, 96%, 18%);; /* Green when active */
+}
+
+.toggle-switch.active .slider {
+  transform: translateX(30px); /* Move the slider to the right when active */
+}
+
+
+.PickAddOns {
+  display: flex;
+  flex-direction: column;
+}
+
+.addons {
+display: flex;
+direction: row;
+justify-content: space-between;
+align-items: center;
+border: 1px solid hsl(229, 24%, 87%);
+width: 400px;
+height: 30px;
+padding: 20px;
+border-radius: 10px;
+font-size: 14px;
+line-height: 1px;
+margin: 5px;
+}
+
+.addons:hover {
+  border: 1px solid hsl(243, 100%, 62%);
+  background-color: var(--Alabaster);
+  cursor: pointer;
+}
+.activeaddons {
+  border: 1px solid hsl(243, 100%, 62%);
+  background-color: var(--Alabaster);
+}
+
+.addons span {
+  margin-right: -100px;
+}
+
+.addons p {
+  color: var(--Cool-gray);
+}
+
+
+
+.summaryBox {
+  border-radius: 10px;
+  background-color: var(--Magnolia);
+  width: 430px;
+  /* height: 180px; */
+  padding: 20px;
+}
+
+.total {
+  width: 430px;
+  height: 30px;
+  padding: 20px;
+
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 10px;
+}
+
+.line {
+  width: 350px;
+  text-align: center;
+  margin:  10px auto;
+  border: 1px solid var(--Light-gray);
+
+}
+
+.summaryBox p,  .total p{
+  color: var(--Cool-gray);
+}
+
+.change {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.totalPrice {
+  color: var(--Purplish-blue);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+.thankyou {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 100px;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.thankyou p {
+  color: var(--Cool-gray);
+}
+
+.error {
+  color: red;
 }
